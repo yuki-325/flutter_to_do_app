@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_to_do_app/services/theme_service.dart';
 import 'package:flutter_to_do_app/ui/home_page.dart';
 import 'package:flutter_to_do_app/ui/theme.dart';
@@ -19,6 +20,14 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
+      localizationsDelegates: const [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ],
+      supportedLocales: const [
+        Locale("en"),
+        Locale("ja"),
+      ],
       theme: Themes.light,
       darkTheme: Themes.dark,
       themeMode: ThemeService().theme,
